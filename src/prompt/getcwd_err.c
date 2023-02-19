@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   getcwd_err.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/19 18:39:38 by kdhrif            #+#    #+#             */
-/*   Updated: 2023/02/19 19:58:48 by kdhrif           ###   ########.fr       */
+/*   Created: 2023/02/19 19:10:32 by kdhrif            #+#    #+#             */
+/*   Updated: 2023/02/19 19:24:55 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
-int main(int ac, char **av, char **env)
+char	*getcwd_err(char *buf, size_t size)
 {
-	char *prompt;
+	char	*tmp;
 
-	printf();
-	printf();
-	/* while (1) */
-	/* { */
-	/* 	prompt = get_prompt(); */
-
-
-	/* } */
+	tmp = getcwd(buf, size);
+	if (tmp == NULL)
+	{
+		ft_putstr_fd("minishell: ", 2);
+		ft_putstr_fd(buf, 2);
+		ft_putstr_fd(": ", 2);
+		ft_putendl_fd(strerror(errno), 2);
+	}
+	return (tmp);
 }

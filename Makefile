@@ -6,7 +6,7 @@
 #    By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/17 15:02:59 by kdhrif            #+#    #+#              #
-#    Updated: 2023/02/17 15:03:31 by kdhrif           ###   ########.fr        #
+#    Updated: 2023/02/19 20:50:55 by kdhrif           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,18 @@ NAME     = minishell
 SRCS_DIR = srcs
 BONUS_DIR = bonus
 OBJS_DIR = objs
-SRCS	:= $(shell find srcs/*.c -exec basename \ {} \;)
-OBJS     = ${patsubst %.c,${OBJS_DIR}/%.o,${SRCS}}
+SRCS	=\
+		  ./src/utils/ft_putendl_fd.c\
+		  ./src/utils/ft_strlen.c\
+		  ./src/utils/ft_putstr_fd.c\
+		  ./src/utils/ft_strjoin.c\
+		  ./src/main.c\
+		  ./src/prompt/getcwd_err.c\
+		  ./src/prompt/display.c\
+		  ./src/prompt/getenv_err.c\
+		  ./src/prompt/getprompt.c
+
+OBJS     = $(SRCS:.c=.o)
 CC       = gcc
 CFLAGS   =  -Wall -Wextra -Werror
 HEADERS  = includes/minishell.h

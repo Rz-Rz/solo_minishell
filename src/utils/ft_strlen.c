@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/19 18:39:38 by kdhrif            #+#    #+#             */
-/*   Updated: 2023/02/19 19:58:48 by kdhrif           ###   ########.fr       */
+/*   Created: 2023/02/19 19:22:03 by kdhrif            #+#    #+#             */
+/*   Updated: 2023/02/19 19:22:11 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
-int main(int ac, char **av, char **env)
+size_t	ft_strlen(const char *s)
 {
-	char *prompt;
+	size_t	i;
 
-	printf();
-	printf();
-	/* while (1) */
-	/* { */
-	/* 	prompt = get_prompt(); */
-
-
-	/* } */
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/19 18:39:38 by kdhrif            #+#    #+#             */
-/*   Updated: 2023/02/19 19:58:48 by kdhrif           ###   ########.fr       */
+/*   Created: 2023/02/19 19:20:39 by kdhrif            #+#    #+#             */
+/*   Updated: 2023/02/19 19:24:00 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
-int main(int ac, char **av, char **env)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char *prompt;
-
-	printf();
-	printf();
-	/* while (1) */
-	/* { */
-	/* 	prompt = get_prompt(); */
-
-
-	/* } */
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 }
